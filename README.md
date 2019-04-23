@@ -8,8 +8,8 @@ You can run the program providing command line arguments. There are two possible
 
 Correct Examples:
 1. -i 58 9.32 "Command Line Text";
-2. -i 58 9.32 "Command Line Text" -a 55.23 6 65.2 15.3;
-3. -a 55.23 6 65.2 15.3 -i 58 9.32 "Command Line Text";
+2. -i 58 9.32 "Command Line Text" -a 55.23 15.3 65.2 6;
+3. -a 55.23 15.3 65.2 6 -i 58 9.32 "Command Line Text";
 4. *no arguments at all*.
 
 ## Credits
