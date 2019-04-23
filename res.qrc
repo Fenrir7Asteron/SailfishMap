@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/add-searching.svg</file>
+        <file>icons/delete-searching.svg</file>
+        <file>qml/SailfishMap.qml</file>
+        <file>qml/pages/MainPage.qml</file>
+        <file>qml/cover/CoverPage.qml</file>
+        <file>qml/MapQuickItem.qml</file>
+        <file>icons/placeholder.svg</file>
+    </qresource>
+</RCC>
