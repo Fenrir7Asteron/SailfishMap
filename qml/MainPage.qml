@@ -4,9 +4,6 @@ import Sailfish.Silica 1.0
 import QtPositioning 5.3
 import QtLocation 5.0
 
-[
-    property double asd: 123
-]
 
 Page {
     id: page
@@ -50,22 +47,26 @@ Page {
             objectName: "transparentMapRectangle"
             color: "transparent"
             opacity: 0.05
+            property double lLatitude: 57
+            property double lLongitude: 8
+            property double rLatitude: 60
+            property double rLongitude: 12
             topLeft {
-                latitude: 57
-                longitude: 8
+                latitude: lLatitude
+                longitude: lLongitude
             }
             bottomRight {
-                latitude: 60
-                longitude: 12
+                latitude: rLatitude
+                longitude: rLongitude
             }
 
             onObjectNameChanged: {
                 map.center_coord = QtPositioning.coordinate((topLeft.latitude + bottomRight.latitude) / 2, (topLeft.longitude + bottomRight.longitude) / 2)
                 map.zoom = map.maximumZoomLevel - (7.5 + Math.log(Math.max(Math.abs(topLeft.latitude - bottomRight.latitude), Math.abs(topLeft.longitude - bottomRight.longitude))) / Math.log(1.8))
-                console.log(topLeft.latitude, topLeft.longitude)
             }
         }
 
+        // Copied from the Internet. Did not have time to test it.
         gesture.enabled: true
         PinchArea {
             id: pincharea

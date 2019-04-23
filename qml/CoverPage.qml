@@ -42,17 +42,17 @@ CoverBackground {
             objectName: "cover_transparentMapRectangle"
             color: "transparent"
             opacity: 0.05
+            property double lLatitude: 57
+            property double lLongitude: 8
+            property double rLatitude: 60
+            property double rLongitude: 12
             topLeft {
-                latitude: 57
-                longitude: 8
+                latitude: lLatitude
+                longitude: lLongitude
             }
             bottomRight {
-                latitude: 60
-                longitude: 12
-            }
-
-            onObjectNameChanged: {
-                console.log(topLeft.latitude, topLeft.longitude)
+                latitude: rLatitude
+                longitude: rLongitude
             }
         }
 
@@ -108,12 +108,10 @@ CoverBackground {
                     }
                 }
             }
-
             onObjectNameChanged: {
                 if (Qt.colorEqual(cover_mapRectangle.color, "transparent")) {
                     cover_map.center_coord = coordinate
                 }
-                console.log(coordinate)
             }
         }
     }
